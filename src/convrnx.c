@@ -1304,7 +1304,7 @@ static int convrnx_s(int sess, int format, rnxopt_t *opt, const char *file,
     /* replace keywords in output file */
     for (i=0;i<NOUTFILE;i++) {
         paths[i]=s[i];
-        if (reppath(ofile[i],paths[i],time,staname,"")<0) {
+        if (reppath(ofile[0 /*i*/],paths[i],time,staname,"")<0) {
             showmsg("no time for output path: %s",ofile[i]);
             for (i=0;i<MAXEXFILE;i++) free(epath[i]);
             free_strfile(str);
